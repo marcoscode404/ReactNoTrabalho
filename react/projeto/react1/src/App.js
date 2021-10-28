@@ -1,5 +1,5 @@
 import  React, { useState, useEffect } from 'react';
-// import styled from 'styled-components';
+import styled from 'styled-components';
 import SearchBox from './components/SearchBox';
 // importando de da pasta Components
 
@@ -10,6 +10,21 @@ import SearchBox from './components/SearchBox';
 
 function App() {
   
+const Container =  styled.div`
+    margin:0 2px 5px;
+    padding: 10px;
+    background-color: #8BC6EC;
+    background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+
+    height: 250px;
+
+
+`;
+
+
+
+
+
   const [searchText, setSearchText] = useState('');
 
   // criando const de listas
@@ -50,7 +65,9 @@ function App() {
 
   return (
     <>
-      <h1>Lista de Trabalho!</h1>
+      <Container>
+        <h1>Lista de Trabalho!</h1>
+      </Container>
 
       <SearchBox 
         frasePadrao="Adicione na lista" 
