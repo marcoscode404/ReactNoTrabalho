@@ -5,4 +5,5 @@
 
 
 ## Atualizando a lista pelo campo imput 
- 
+##  // cria um array com uma nova lista 
+## inverte o valor da lista de true para false

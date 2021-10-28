@@ -36,6 +36,16 @@ function App() {
     setList(newList);
   }
 
+// marcando item como feito
+  function hangleToggleDone(index) {
+    // cria um array com uma nova lista 
+    let newList = [ ...list ];
+    // inverte o valor da lista de true para false
+    newList[index].done = !newList[index].done;
+    // salva a nova lista
+    setList(newList);
+  }
+
 
 
   return (
@@ -52,7 +62,7 @@ function App() {
     {/* para exibir um lista com react se usa o .map */}
     <ul>
       {list.map((item, index)=>(
-        <li key={index}>
+        <li key={index} onClick={()=>hangleToggleDone(index)}>
           {item.done && 
             <del>{item.title}</del>  
           }
