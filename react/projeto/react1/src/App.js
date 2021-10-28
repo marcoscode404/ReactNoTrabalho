@@ -1,23 +1,42 @@
 import  React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import SearchBox from './components/SearchBox';
+// importando de da pasta Components
 
 
-//Ciclo de vida de um component
+
+
+
+//usando props para usar propriedades
 
 
 
 function App() {
   
+  const [searchText, setSearchText] = useState('');
+
+  function handleSearchInput(novoTexto){
+    setSearchText(novoTexto);
+  }
 
 
   return (
     <>
-      <h1>Olá caro amigo</h1>
-      <SearchBox frasePadrao="faça sua busca agora ..."/>
-      <SearchBox frasePadrao="Digite seu nome"/>
-      <SearchBox />
-      <SearchBox />
+      <h1>Lista de Trabalho!</h1>
+
+      <SearchBox 
+        frasePadrao="Faça sua Busca" 
+        onChangeText={handleSearchInput}
+      />
+
+      <SearchBox 
+        frasePadrao={searchText}
+      />
+
+      <hr/>
+
+      Texto procurado: {searchText}
+
     </>
   );
     

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
 
@@ -12,12 +12,30 @@ const InputText = styled.input`
 `;
 
 
+
+
 function SearchBox(props) {
+
+    // Criando const useState
+    const [texto, setTexto] = useState('');
+
+    useEffect(()=>{
+        if(props.onChangeText) {
+            props.onChangeText(texto);
+        }
+    }, [texto]); 
+
     return (
-        <InputText type="text" placeholder={props.frasePadrao ?? "Digite alguma coisa"} />
+        <InputText 
+            type="text"
+            value={texto}
+            onChange={(e)=>setTexto(e.target.value)} 
+            placeholder={props.frasePadrao ?? "Digite alguma coisa"}
+        />
     );
 }
 
 
 
 export default SearchBox;
+
