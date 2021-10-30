@@ -4,6 +4,9 @@
 ## Criando function de lista e utilizando o .map para mapear todo o array da lista
 
 
-## Atualizando a lista pelo campo imput 
-##  // cria um array com uma nova lista 
+## Atualizando a lista pelo campo imput
+##  // cria um array com uma nova lista
 ## inverte o valor da lista de true para false
+
+
+## instalando o routers no react e utilizando

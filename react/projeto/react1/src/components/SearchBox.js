@@ -4,11 +4,12 @@ import styled from "styled-components";
 
 // usando o styled components
 const InputText = styled.input`
-    border:2px solid #000;
+    border:2px solid   rgba(9,111,224,1);
     border-radius: 5px;
     padding: 15px;
     font-size: 17px;
-    width: 300px;
+    width: 93%;
+  
 `;
 
 
