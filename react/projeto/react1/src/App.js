@@ -1,5 +1,7 @@
 import React from "react";
-import { BrowserRouter, Switch, Route, Link } from 'react-router-dom'
+import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
+import Home from './pages/Home';
+import Sobre from './pages/Sobre';
 
 function App() {
     return (
@@ -19,6 +21,31 @@ function App() {
                     </ul>
                 </nav>
             </header>
+            {/* /header --> criando os links */}
+            <hr/>
+
+           <Switch>
+
+               {/* só apareça a tela home se eu botar a tela exata */}
+                <Route exact path="/">
+                    <Home/>
+                </Route>
+
+                <Route path="/sobre">
+                    <Sobre />
+                </Route>
+                
+           </Switch>
+            {/* criando as rotas */}
+
+            <hr />
+
+            <footer>
+                todos os direitos reservados ...
+            </footer>
+
+
+
         </BrowserRouter>
     );
 }
