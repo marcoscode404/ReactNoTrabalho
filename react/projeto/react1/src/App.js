@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import Sobre from './pages/Sobre';
 import Categoria from './pages/Categoria';
 
+
 function App() {
     return (
         <BrowserRouter>
