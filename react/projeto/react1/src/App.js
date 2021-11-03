@@ -21,13 +21,17 @@ function App() {
                             <Link to="/sobre">Sobre</Link>
                         </li>
                         <li>
-                            <Link to="/categoria/esportes">Esportes</Link>
+                            <Link to="/categoria?tipo=esportes">Esportes</Link>
                         </li>
                         <li>
-                            <Link to="/categoria/noticias">Noticias</Link>
+                            <Link to="/categoria?tipo=noticias">Noticias</Link>
                         </li>
                         <li>
-                            <Link to="/categoria/viagem">Viagem</Link>
+                            <Link to="/categoria?tipo=viagem">Viagem</Link>
+                        </li>
+
+                        <li>
+                            <Link to="/teste">Viagem</Link>
                         </li>
 
                     </ul>
@@ -47,9 +51,15 @@ function App() {
                     <Sobre />
                 </Route>
 
-                <Route path="/categoria/:cat">
+                <Route path="/categoria">
                     <Categoria/>
                 </Route>
+
+                {/* ultima rota padrão é usado o * para dizer que aceita tudo que for inserido na url */}
+                <Route path="*">
+                    <h4>Página não encontrada</h4>
+                </Route>
+
 
            </Switch>
             {/* criando as rotas */}
