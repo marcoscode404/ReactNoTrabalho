@@ -1,8 +1,20 @@
 import React from "react";
-import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, Link, Redirect } from 'react-router-dom';
 import Home from './pages/Home';
 import Sobre from './pages/Sobre';
-import Categoria from './pages/Categoria';
+import Login from "./pages/Login";
+
+// verifica se a pessoa está logada ou não
+const isLogged = false;
+
+// rest => resto
+const PrivateRoute = ({ children, ...rest }) => {
+    return (
+        <Route { ...rest}>
+            {isLogged ? children : <Redirect to="/login" />}
+        </Route>
+    );
+};
 
 
 function App() {
@@ -20,15 +32,9 @@ function App() {
                         <li>
                             <Link to="/sobre">Sobre</Link>
                         </li>
-                        <li>
-                            <Link to="/categoria?tipo=esportes">Esportes</Link>
-                        </li>
-                        <li>
-                            <Link to="/categoria?tipo=noticias">Noticias</Link>
-                        </li>
-                        <li>
-                            <Link to="/categoria?tipo=viagem">Viagem</Link>
-                        </li>
+
+
+
 
                         <li>
                             <Link to="/teste">Viagem</Link>
@@ -47,13 +53,11 @@ function App() {
                     <Home/>
                 </Route>
 
-                <Route path="/sobre">
+                {/* fazendo rota não ser acessivel se o usuario não estiver logado */}
+                <PrivateRoute path="/sobre">
                     <Sobre />
-                </Route>
+                </PrivateRoute>
 
-                <Route path="/categoria">
-                    <Categoria/>
-                </Route>
 
                 {/* ultima rota padrão é usado o * para dizer que aceita tudo que for inserido na url */}
                 <Route path="*">
